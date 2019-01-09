@@ -39,7 +39,7 @@ From: nickjer/singularity-r:3.5.1
   wget \
     --no-verbose \
     -O rstudio-server.deb \
-    "https://s3.amazonaws.com/rstudio-ide-build/server/trusty/amd64/rstudio-server-${RSTUDIO_VERSION}-amd64.deb
+    "https://s3.amazonaws.com/rstudio-ide-build/server/trusty/amd64/rstudio-server-${RSTUDIO_VERSION}-amd64.deb"
   gdebi -n rstudio-server.deb
   rm -f rstudio-server.deb
 
