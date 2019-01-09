@@ -35,8 +35,7 @@ From: nickjer/singularity-r:3.5.1
     ca-certificates \
     wget \
     gdebi-core \
-    git \
-    openssh-server
+    git
   wget \
     --no-verbose \
     -O rstudio-server.deb \
