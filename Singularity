@@ -2,7 +2,7 @@ BootStrap: shub
 From: nickjer/singularity-r:3.5.1
 
 %labels
-  Maintainer Jeremy Nicklas
+  Maintainer tpall
   RStudio_Version 1.2.1226
 
 %help
