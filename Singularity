@@ -31,7 +31,7 @@ From: nickjer/singularity-r:3.5.1
 
   # Install RStudio Server
   apt-get update
-  apt-get install -y --no-install-recommends \
+  apt-get install -y \
     ca-certificates \
     wget \
     gdebi-core \
