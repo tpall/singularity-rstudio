@@ -30,26 +30,23 @@ From: nickjer/singularity-r:3.5.1
   export RSTUDIO_VERSION=1.2.1226
 
   # Install RStudio Server
+  # Install libgfortran.so.4 for data.table
+  add-apt-repository ppa:jonathonf/gcc-7.1
   apt-get update
   apt-get install -y \
     ca-certificates \
     wget \
     gdebi-core \
-    git
+    git \
+    gcc-7 \
+    g++-7 \
+    gfortran-7
   wget \
     --no-verbose \
     -O rstudio-server.deb \
     "https://s3.amazonaws.com/rstudio-ide-build/server/trusty/amd64/rstudio-server-${RSTUDIO_VERSION}-amd64.deb"
   gdebi -n rstudio-server.deb
   rm -f rstudio-server.deb
-  
-  # Install libgfortran.so.4 for data.table 
-  add-apt-repository ppa:jonathonf/gcc-7.1
-  apt-get update
-  apt-get install -y \
-    gcc-7 \
-    g++-7 \
-    gfortran-7
   
   # Add support for LDAP authentication
   wget \
