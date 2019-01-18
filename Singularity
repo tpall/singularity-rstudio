@@ -46,7 +46,8 @@ From: nickjer/singularity-r:3.5.1
   # Install libgfortran.so.4 for data.table 
   add-apt-repository ppa:jonathonf/gcc-7.1
   apt-get update
-  apt-get install gcc-7 \
+  apt-get install -y \
+    gcc-7 \
     g++-7 \
     gfortran-7
   
