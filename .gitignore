@@ -5,3 +5,4 @@ singularity-rstudio.simg
 !/example_module/3.4.3/.keep
 /example_module/library-3.4/*
 !/example_module/library-3.4/.keep
+.Rproj.user
