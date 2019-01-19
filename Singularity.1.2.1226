@@ -2,6 +2,7 @@ BootStrap: shub
 From: tpall/singularity-r:3.5.2
 
 %labels
+  Author Jeremy Nicklas
   Maintainer tpall
   RStudio_Version 1.2.1226
 
