@@ -1,11 +1,11 @@
 # Singularity RStudio Server
 
-[![Build Status](https://travis-ci.org/nickjer/singularity-rstudio.svg?branch=master)](https://travis-ci.org/nickjer/singularity-rstudio)
-[![Singularity Hub](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/463)
+[![Build Status](https://travis-ci.org/tpall/singularity-rstudio.svg?branch=master)](https://travis-ci.org/tpall/singularity-rstudio)
+[![Singularity Hub](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/2080)
 [![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-Singularity image for [RStudio Server]. It was built on top of the base
-Singularity image [nickjer/singularity-r].
+Singularity image for [RStudio Server]. It was built on top of the **base R**
+Singularity image with **git** and **subversion** [tpall/singularity-r].
 
 This is still a work in progress.
 
@@ -127,7 +127,7 @@ See [nickjer/singularity-r] for more information on how to run `R` and
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at
+Bug reports and pull requests are welcome on GitHub to
 https://github.com/nickjer/singularity-rstudio.
 
 ## License
@@ -136,5 +136,5 @@ The code is available as open source under the terms of the [MIT License].
 
 
 [RStudio Server]: https://www.rstudio.com/products/rstudio/
-[nickjer/singularity-r]: https://github.com/nickjer/singularity-r
+[tpall/singularity-r]: https://github.com/tpall/singularity-r
 [MIT License]: http://opensource.org/licenses/MIT
