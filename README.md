@@ -5,7 +5,7 @@
 [![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Singularity image for [RStudio Server]. It was built on top of the **base R**
-Singularity image with **git** and **subversion** [tpall/singularity-r].
+Singularity image with **git** and **subversion** at [tpall/singularity-r].
 
 This is still a work in progress.
 
