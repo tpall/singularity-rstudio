@@ -36,7 +36,6 @@ From: tpall/singularity-r:3.5.2
     ca-certificates \
     wget \
     gdebi-core
-  
   wget \
     --no-verbose \
     -O rstudio-server.deb \
