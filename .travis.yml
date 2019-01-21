@@ -6,9 +6,9 @@ env:
     - SINGULARITY_IMAGE=singularity-rstudio.simg
   matrix:
     - SPEC=Singularity
-    - SPEC=Singularity.3.4.4
-    - SPEC=Singularity.3.5.1
-    - SPEC=Singularity.3.5.2
+    - SPEC=Singularity.1.1.463
+    - SPEC=Singularity.1.1.1226
+    - SPEC=Singularity.1.1.1237
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y squashfs-tools curl
