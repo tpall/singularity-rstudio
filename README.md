@@ -23,7 +23,7 @@ Instead of building it yourself you can download the pre-built image from
 [Singularity Hub](https://www.singularity-hub.org) with:
 
 ```sh
-singularity pull --name singularity-rstudio.simg shub://nickjer/singularity-rstudio
+singularity pull --name singularity-rstudio.simg shub://tpall/singularity-rstudio
 ```
 
 ## Run
