@@ -78,10 +78,6 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
   ## Use more robust file locking to avoid errors when using shared volumes:
   echo 'lock-type=advisory' >> /etc/rstudio/file-locks
   
-  ## Configure git not to request password each time
-  git config --system credential.helper 'cache --timeout=3600' \
-  && git config --system push.default simple
-  
   ## Set up S6 init system
   wget -P /tmp/ https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-amd64.tar.gz \
   && tar xzf /tmp/s6-overlay-amd64.tar.gz -C / \
