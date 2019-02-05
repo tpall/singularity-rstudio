@@ -61,4 +61,5 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
   wget -q https://bootstrap.pypa.io/get-pip.py \
   && python3 get-pip.py \
   && rm get-pip.py \
+  && pip3 install --upgrade pip \
   && pip3 install ldap3
