@@ -38,6 +38,8 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
     libapparmor1 \
     libcurl4-openssl-dev \
     libedit2 \
+    libssl-dev \
+    libssl1.0.2 \
     libclang-dev \
     lsb-release \
     psmisc \
