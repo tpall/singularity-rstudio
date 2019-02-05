@@ -3,7 +3,7 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
 
 %labels
   Maintainer tpall
-  RStudio_Version 1.2.1237
+  RStudio_Version 1.2.1256
 
 %help
   This will run RStudio Server
@@ -39,6 +39,7 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
     libcurl4-openssl-dev \
     libedit2 \
     libssl-dev \
+    libclang-dev \
     lsb-release \
     psmisc \
     procps \
