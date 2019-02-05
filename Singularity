@@ -28,9 +28,6 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
 %post
   # Software versions
   export RSTUDIO_VERSION=${RSTUDIO_VERSION:-1.2.1256}
-  export S6_VERSION=${S6_VERSION:-v1.21.7.0}
-  export S6_BEHAVIOUR_IF_STAGE2_FAILS=2
-  export PATH=/usr/lib/rstudio-server/bin:$PATH
   
   ## Download and install RStudio server & dependencies
   ## Attempts to get detect latest version, otherwise falls back to version given in $VER
@@ -58,44 +55,6 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
   ## Clean up
   apt-get clean \
   && rm -rf /var/lib/apt/lists/
-  
-  ## RStudio wants an /etc/R, will populate from $R_HOME/etc
-  mkdir -p /etc/R
-  
-  ## Write config files in $R_HOME/etc
-  echo '\n\
-    \n# Configure httr to perform out-of-band authentication if HTTR_LOCALHOST \
-    \n# is not set since a redirect to localhost may not work depending upon \
-    \n# where this container is running. \
-    \nif(is.na(Sys.getenv("HTTR_LOCALHOST", unset=NA))) { \
-    \n  options(httr_oob_default = TRUE) \
-    \n}' >> /usr/local/lib/R/etc/Rprofile.site \
-  && echo "PATH=${PATH}" >> /usr/local/lib/R/etc/Renviron
-  
-  ## Prevent rstudio from deciding to use /usr/bin/R if a user apt-get installs a package
-  echo 'rsession-which-r=/usr/local/bin/R' >> /etc/rstudio/rserver.conf
-  
-  ## Use more robust file locking to avoid errors when using shared volumes:
-  echo 'lock-type=advisory' >> /etc/rstudio/file-locks
-  
-  ## Set up S6 init system
-  wget -P /tmp/ https://github.com/just-containers/s6-overlay/releases/download/${S6_VERSION}/s6-overlay-amd64.tar.gz \
-  && tar xzf /tmp/s6-overlay-amd64.tar.gz -C / \
-  && mkdir -p /etc/services.d/rstudio \
-  && echo '#!/usr/bin/with-contenv bash \
-          \n## load /etc/environment vars first: \
-  		  \n for line in $( cat /etc/environment ) ; do export $line ; done \
-          \n exec /usr/lib/rstudio-server/bin/rserver --server-daemonize 0' \
-          > /etc/services.d/rstudio/run \
-  && echo '#!/bin/bash \
-          \n rstudio-server stop' \
-          > /etc/services.d/rstudio/finish \
-  && mkdir -p /home/rstudio/.rstudio/monitored/user-settings \
-  && echo 'alwaysSaveHistory="0" \
-          \nloadRData="0" \
-          \nsaveAction="0"' \
-          > /home/rstudio/.rstudio/monitored/user-settings/user-settings \
-  && chown -R rstudio:rstudio /home/rstudio/.rstudio
   
   ## Add support for LDAP authentication
   wget \
