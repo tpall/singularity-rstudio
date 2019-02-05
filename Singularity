@@ -55,4 +55,7 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
   && rm -rf /var/lib/apt/lists/
   
   ## Add support for LDAP authentication
+  wget -q https://bootstrap.pypa.io/get-pip.py \
+  && python get-pip.py \
+  && rm get-pip.py \
   pip install ldap3
