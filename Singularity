@@ -39,7 +39,6 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
     libcurl4-openssl-dev \
     libedit2 \
     libssl-dev \
-    libssl1.0.2 \
     libclang-dev \
     lsb-release \
     psmisc \
@@ -47,6 +46,9 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
     python-setuptools \
     sudo \
     wget \
+  && wget -O libssl1.0.2.deb http://ftp.br.debian.org/debian/pool/main/o/openssl1.0/libssl1.0.2_1.0.2l-2+deb9u3_amd64.deb \
+  && dpkg -i libssl1.0.2.deb \
+  && rm libssl1.0.2.deb \
   && wget -q https://s3.amazonaws.com/rstudio-ide-build/server/debian9/x86_64/rstudio-server-${RSTUDIO_VERSION}-amd64.deb \
   && dpkg -i rstudio-server-${RSTUDIO_VERSION}-amd64.deb \
   && rm rstudio-server-*-amd64.deb
