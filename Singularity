@@ -55,4 +55,4 @@ From: tpall/singularity-r@78ab1978abb2755fb253be6bd2d19b4d2446cdd3
   && rm -rf /var/lib/apt/lists/
   
   ## Add support for LDAP authentication
-  pip3 install ldap3
+  pip install ldap3
