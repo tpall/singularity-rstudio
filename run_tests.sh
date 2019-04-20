@@ -1,18 +1,18 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export SINGULARITY_IMAGE="${SINGULARITY_IMAGE:-singularity-rstudio.simg}"
 echo "Using Singularity image: ${SINGULARITY_IMAGE}"
 
 check_password () {
   echo "${2}" | \
-    singularity exec ${SINGULARITY_IMAGE} rstudio_auth "${1}"
+    singularity exec rstudio_auth "${1}"
 }
 
 set -e
 set -x
 
 # Verify RStudio Server installation
-singularity exec ${SINGULARITY_IMAGE} rserver --verify-installation=1 --www-address=0.0.0.0 --www-port=9898
+singularity exec rserver --verify-installation=1 --www-address=0.0.0.0 --www-port=9898
 
 # Verify default PAM auth helper script
 export RSTUDIO_PASSWORD="password"
