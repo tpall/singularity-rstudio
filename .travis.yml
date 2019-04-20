@@ -4,7 +4,7 @@ language: generic
 env:
   global:
     - SINGULARITY_IMAGE=singularity-rstudio.simg
-    - VERSION=2.6.0
+    - VERSION=2.5.0
   matrix:
     - SPEC=Singularity
     - SPEC=Singularity.1.2.1237
