@@ -27,8 +27,3 @@ notifications:
   email:
     on_success: never
     on_failure: always
-  webhooks:
-    urls: 
-      - https://api.github.com/repos/tpall/singularity-r/deployments
-    on_success: always
-    on_failure: never
